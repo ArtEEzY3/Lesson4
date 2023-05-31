@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
         SecretKey key = generateKey();
 //                encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
         Bundle	bundle	=	new	Bundle();
-        byte[] shiper = encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);;
+        byte[] shiper = encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
         bundle.putByteArray(MyLoader.ARG_WORD,	shiper);
         bundle.putByteArray("key",	key.getEncoded());
         LoaderManager.getInstance(this).initLoader(LoaderID,	bundle,	this);
