@@ -36,18 +36,18 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        binding.sendBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                SecretKey key = generateKey();
-////                encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
-//                Bundle	bundle	=	new	Bundle();
-//                byte[] shiper = encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);;
-//                bundle.putByteArray(MyLoader.ARG_WORD,	shiper);
-//                bundle.putByteArray("key",	key.getEncoded());
-//                LoaderManager.getInstance(this).initLoader(LoaderID,	bundle,	this);
-//            }
-//        });
+        binding.sendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SecretKey key = generateKey();
+//                encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
+                Bundle	bundle	=	new	Bundle();
+                byte[] shiper = encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
+                bundle.putByteArray(MyLoader.ARG_WORD,	shiper);
+                bundle.putByteArray("key",	key.getEncoded());
+                LoaderManager.getInstance(MainActivity.this).initLoader(LoaderID,	bundle,	MainActivity.this);
+            }
+        });
     }
 
     @Override
@@ -97,14 +97,13 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
     }
 
 
-    public void onClickTest(View view) {
-        SecretKey key = generateKey();
-//                encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
-        Bundle	bundle	=	new	Bundle();
-        byte[] shiper = encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
-        bundle.putByteArray(MyLoader.ARG_WORD,	shiper);
-        bundle.putByteArray("key",	key.getEncoded());
-        LoaderManager.getInstance(this).initLoader(LoaderID,	bundle,	this);
-
-    }
+//    public void onClickTest(View view) {
+//        SecretKey key = generateKey();
+////                encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
+//        Bundle	bundle	=	new	Bundle();
+//        byte[] shiper = encryptMsg(String.valueOf(binding.phraseEdit.getText()),key);
+//        bundle.putByteArray(MyLoader.ARG_WORD,	shiper);
+//        bundle.putByteArray("key",	key.getEncoded());
+//        LoaderManager.getInstance(this).initLoader(LoaderID,	bundle,	this);
+//    }
 }
