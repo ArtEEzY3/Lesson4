@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 Message msg = Message.obtain();
                 Bundle bundle = new Bundle();
                 bundle.putString("KEY", "Ilya");
+                bundle.putInt("OLD", 21);
                 msg.setData(bundle);
                 myLooper.mHandler.sendMessage(msg);
             }

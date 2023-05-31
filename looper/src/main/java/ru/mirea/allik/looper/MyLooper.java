@@ -19,8 +19,9 @@ public class MyLooper extends Thread{
         mHandler = new Handler(Looper.myLooper()) {
             public void handleMessage(Message msg) {
                 String data = msg.getData().getString("KEY");
+                int delay = msg.getData().getInt("OLD");
                 Log.d("MyLooper get message: ", data);
-                int delay = 21;
+                Log.d("MyLooper get message: ", String.valueOf(delay));
                 Message message = new Message();
                 Bundle bundle = new Bundle();
                 SystemClock.sleep(delay*1000);
